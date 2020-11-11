@@ -52,7 +52,7 @@ Generate tokens:
         ![Postman environment variables](https://i.imgur.com/Krzhmkr.png)
     - The `read` only token should not be able to create/update/delete any resources
     - The other token should be able to do all resource actions
-    - To test authorization on a specific route in Postman:  
+    - To test authorization on a specific create/update/delete route in Postman:  
     ![Postman per request Authorization](https://i.imgur.com/P5GkIbV.png) 
         1. Click the Authorization tab
         1. Change the `TYPE` from `Inherit auth from parent` to `Bearer Token`

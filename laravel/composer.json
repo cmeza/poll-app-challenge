@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "cmeza/poll-app-challenge",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Coding challenge to create a poll app.",
     "keywords": [
         "framework",
         "laravel"
@@ -16,8 +16,7 @@
         "laravel/jetstream": "^1.6",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
-        "livewire/livewire": "^2.0",
-        "reliese/laravel": "^0.0.18"
+        "livewire/livewire": "^2.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.8",
@@ -25,7 +24,8 @@
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
-        "phpunit/phpunit": "^9.3.3"
+        "phpunit/phpunit": "^9.3.3",
+        "reliese/laravel": "^0.0.18"
     },
     "config": {
         "optimize-autoloader": true,

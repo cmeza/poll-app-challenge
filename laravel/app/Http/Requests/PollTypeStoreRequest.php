@@ -24,7 +24,7 @@ class PollTypeStoreRequest extends BaseFormRequest
     public function rules()
     {
         return [
-            'type' => ['required', 'alpha_num'],
+            'type' => ['required', 'string'],
         ];
     }
 }

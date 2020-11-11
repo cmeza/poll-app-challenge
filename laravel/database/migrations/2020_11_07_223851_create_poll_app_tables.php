@@ -41,7 +41,10 @@ class CreatePollAppTables extends Migration
                 $table->timestamps();
                 $table->softDeletes();
 
-                $table->index('poll_id', 'poll_question_id');
+                $table->unique(
+                    ['poll_id', 'poll_question_id'],
+                    'poll_results_index'
+                );
             });
 
             Schema::create('poll_types', function (Blueprint $table) {
