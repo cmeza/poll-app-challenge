@@ -1,0 +1,1010 @@
+{
+	"info": {
+		"_postman_id": "60a6e91d-79c5-40c8-90ba-4d91df279f0e",
+		"name": "PollApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Polls",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "poll_question_id",
+									"value": "89",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/polls",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"polls"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "poll_question_id",
+									"value": "89",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/polls/3",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"polls",
+								"3"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "New Poll 2",
+									"type": "text"
+								},
+								{
+									"key": "poll_type_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/polls",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"polls"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Test Poll",
+									"type": "text"
+								},
+								{
+									"key": "poll_type_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/polls/4",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"polls",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "poll_question_id",
+									"value": "89",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/polls/4",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"polls",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Questions",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "poll_question_id",
+									"value": "89",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/questions",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "poll_question_id",
+									"value": "89",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/questions/73",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"questions",
+								"73"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "question",
+									"value": "Test Question",
+									"type": "text"
+								},
+								{
+									"key": "is_int",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/questions",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "poll_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "question",
+									"value": "TEST QUESTION",
+									"type": "text"
+								},
+								{
+									"key": "is_int",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/questions/93",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"questions",
+								"93"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "poll_question_id",
+									"value": "89",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/questions/93",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"questions",
+								"93"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Results",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "poll_question_id",
+									"value": "89",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/results",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"results"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "poll_question_id",
+									"value": "89",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/results/3",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"results",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "poll_question_id",
+									"value": "13",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/results",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"results"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "poll_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "poll_question_id",
+									"value": "73",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/results/3",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"results",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "poll_question_id",
+									"value": "89",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/results/6",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"results",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Types",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{pollTokenRead}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "poll_question_id",
+									"value": "89",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/types",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "poll_question_id",
+									"value": "89",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/types/3",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"types",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "TEST TYPE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/types",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "type",
+									"value": "Test Types Edited",
+									"type": "text"
+								},
+								{
+									"key": "poll_question_id",
+									"value": "73",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "value",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/types/4",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"types",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "poll_question_id",
+									"value": "89",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{pollApiUrl}}/types/4",
+							"host": [
+								"{{pollApiUrl}}"
+							],
+							"path": [
+								"types",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{pollTokenFull}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "420c5acb-f914-46d8-8ac0-3a1152554b61",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "7263c833-2219-4e51-9347-153f2baaa4da",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "1bb49841-ba23-40ed-ba21-14ef0e4f9e95",
+			"key": "pollToken",
+			"value": "asdf"
+		},
+		{
+			"id": "017f2ff6-e1f6-4d31-96e2-b62a75139a1d",
+			"key": "pollCookie",
+			"value": "remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IlhqTEJLa3MrUWxpa0ZrZ0c0QW4ya3c9PSIsInZhbHVlIjoiSDRkYjhtWW9rZklIQ3BPVHdkbWd4MkYwdXZBQVJpYjZFL1Q4MFp1cGc1YnB6UnZUUXNTQUpzdXg1WXd2MFVBY09NMHZhNENhQkZPZnJMNUtjbEpFdEhyTzc3U1hTOUJTanZtaWJ3VjVPTUV1d0FGNmtMSytZSTJBeGFTS0FVVFBwVTFLaFl1WGpYTUx6L2gyU2JyK2tjMTJ2UUhqK1VQazh6eWdzNHFyTWpKRWhqOEpaWHBYOWpnODBGaDdOcXZkKzQzU2VuekpIbWhESDQ1T01DR3V5UkF2a29mWHlRcCsycklQM0RhRVhjQT0iLCJtYWMiOiI2MTQ2MDgzNzk5NjNiOThhNmU5ZThhYzM4N2M4Mjg5N2NlZWI0ZTQ0YzA1MWY0OTFhNDEwYjY4ODBkZTUxZDA5In0%3D; hide_solutions=true; XSRF-TOKEN=eyJpdiI6IlVFVG9nWU5qOS9nTVFPMlBQSGJPalE9PSIsInZhbHVlIjoiUDlraVMzTnhOT0dOeHNRR1hwbXhBeEt6ekhXSGNUQUdHNlU0bTMycHY3N0I3bTBFQ1NHbjU4MVNzWU4vWmpNdk02TklyTlY1RkM0cnM4b25tNXIwdmRVLzJsV0dHVmNxT2pwZXhLMWtrRDRkRWs2WmhhaEtFTHVQaGlUNk9xNjAiLCJtYWMiOiI1MTIzMWJjYjMyZmFmZmE1MTczYTY3NzExN2UxNzQ5OTQ3MDI5ZWZkYjc2NTBkODY1NWY1OGQ5ZWVjNmM2ZDU1In0%3D; tsi_challenge_session=eyJpdiI6Im5OaURuMWlMeFE5N0V5dmd1blM2Y0E9PSIsInZhbHVlIjoiRFNqbk1BaTFyTmVvMVF3elY1OS91L0lkajlUMndkMElZaDVkMWdBbSsrdjFsTTJBNVZlYmVoYUhnUDRmVTJyNjdwdVNMNjZzNXJxclNhZmp6SkhuQWQ4V05SSkJ1WDhPUGRZNE1OWDdZSEt3WkliSVdkNm11V0RpMVlCMHRYVDUiLCJtYWMiOiJlMWU1MjFhODFmNmMxZWQzMzg4MTA3M2RiY2NiMDZmYjE5ZDgyZTQ0Njc0NTQwMjkwY2RmZjA4YjJjYmUyN2Y4In0%3D"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
