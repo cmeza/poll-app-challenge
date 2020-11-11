@@ -32,7 +32,7 @@ class PollTypesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PollTypeStoreRequest $request)
     {
         $validData = $request->validated();
 
@@ -51,7 +51,7 @@ class PollTypesController extends Controller
      * @param  \App\Models\PollType  $pollTypes
      * @return \Illuminate\Http\Response
      */
-    public function show(PollTypeStoreRequest $pollTypes)
+    public function show(PollType $pollTypes)
     {
         return new PollTypeResource($pollTypes);
     }
