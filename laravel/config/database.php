@@ -46,7 +46,7 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => 'host.docker.internal', //env('DB_HOST', 'host.docker.internal'), // not sure why this doesn't work
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'pollApp'),
             'username' => env('DB_USERNAME', 'pollApp'),

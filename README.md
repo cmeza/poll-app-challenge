@@ -10,6 +10,7 @@
 - Edit the `.env` with your values
 - Install the PHP requirements: `composer install`
 - Install the JS requirements: `npm install`
+- Install the Laravel application key: `php artisan key:generate --ansi`
 - Run the migrations: `php artisan migrate`
 - Setup the initial data: `php artisan db:seed`
 - Edit your `hosts` file to include:  
@@ -39,4 +40,4 @@
         1. Set Token to `{{pollTokenRead}}`
         1. When you're done testing the read only, switch the `TYPE` back to `Inherit auth from parent`
         1. This `{{pollTokenRead}}` should be there each time you change the setting on any other routes now too!  
-        ![Postman per tab Authorization](https://i.imgur.com/359KAFn.png) 
+        ![Postman per tab Authorization](https://i.imgur.com/K0qjTwj.png) 

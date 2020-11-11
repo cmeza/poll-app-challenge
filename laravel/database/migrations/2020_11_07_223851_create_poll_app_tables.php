@@ -18,7 +18,7 @@ class CreatePollAppTables extends Migration
             Schema::create('polls', function (Blueprint $table) {
                 $table->id();
                 $table->string('title', 100);
-                $table->boolean('is_active');
+                $table->boolean('is_active')->default(true);
                 $table->foreignId('poll_type_id');
                 $table->timestamps();
                 $table->softDeletes();
