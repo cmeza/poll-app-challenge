@@ -15,6 +15,7 @@
 - Run the migrations: `php artisan migrate`
 - Setup the initial data: `php artisan db:seed`
 - Edit your `hosts` file to include: `127.0.0.1 pollapp.test`
+- Start the Docker containers: `docker-compose up -d`
 - Generate API tokens with in the Poll App UI
 
 ## Tinker with the App  
@@ -36,6 +37,8 @@ browser extension to view formatted JSON in the browser!
         - GET /api/questions/{question}
         - GET /api/results
         - GET /api/results/{result}
+        - GET /api/types
+        - GET /api/types/{type}
     - Authenticated API routes:
         - POST /api/polls
         - PATCH /api/polls/{poll}
