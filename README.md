@@ -9,13 +9,15 @@
     - `./.env` (Docker specific config)
     - `./laravel/.env` (Laravel specific config)
 - Edit the `.env` with your values
+- Start the Docker containers: `docker-compose up -d`
+- Connect to the app container: `docker-compose exec app bash`  
+(Steps after this are completed in the app container CLI)
 - Install the PHP dependencies: `composer install`
 - Install the JS dependencies: `npm install`
 - Install the Laravel application key: `php artisan key:generate --ansi`
 - Run the migrations: `php artisan migrate`
 - Setup the initial data: `php artisan db:seed`
 - Edit your `hosts` file to include: `127.0.0.1 pollapp.test`
-- Start the Docker containers: `docker-compose up -d`
 - Generate API tokens with in the Poll App UI
 
 ## Tinker with the App  
