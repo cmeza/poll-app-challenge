@@ -4,14 +4,20 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PollQuestionCreateRequest;
-use App\Http\Requests\PollQuestionStoreRequest;
+use App\Http\Requests\PollQuestionRequest;
 use App\Models\PollQuestion;
 use App\Http\Resources\PollQuestionResource;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Http\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class PollQuestionsController extends Controller
 {
+    /**
+     * PollQuestionsController constructor.
+     */
     public function __construct()
     {
         $this->middleware('auth:api')->except(['index', 'show']);
@@ -20,7 +26,7 @@ class PollQuestionsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return AnonymousResourceCollection
      */
     public function index()
     {
@@ -33,10 +39,10 @@ class PollQuestionsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param PollQuestionRequest $request
+     * @return JsonResponse|Response|object
      */
-    public function store(PollQuestionStoreRequest $request)
+    public function store(PollQuestionRequest $request)
     {
         $validData = $request->validated();
 
@@ -44,7 +50,6 @@ class PollQuestionsController extends Controller
 
         $question->poll_id = (int) $validData['poll_id'];
         $question->question = $validData['question'];
-//        $question->is_int = ($validData['is_int'] === 'true' || $validData['is_int'] === 1);
         $question->is_int = (int) $validData['is_int'];
 
         $question->save();
@@ -57,8 +62,8 @@ class PollQuestionsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PollQuestion  $pollQuestions
-     * @return \Illuminate\Http\Response
+     * @param PollQuestion $pollQuestions
+     * @return PollQuestionResource
      */
     public function show(PollQuestion $pollQuestions)
     {
@@ -70,11 +75,11 @@ class PollQuestionsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param PollQuestionCreateRequest $request
-     * @param \App\Models\PollQuestion $pollQuestions
-     * @return \Illuminate\Http\Response
+     * @param PollQuestionRequest $request
+     * @param PollQuestion $pollQuestions
+     * @return JsonResponse|Response|object
      */
-    public function update(PollQuestionCreateRequest $request, PollQuestion $pollQuestions)
+    public function update(PollQuestionRequest $request, PollQuestion $pollQuestions)
     {
         $validData = $request->validated();
 
@@ -92,8 +97,9 @@ class PollQuestionsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PollQuestion  $pollQuestions
-     * @return \Illuminate\Http\Response
+     * @param PollQuestion $pollQuestions
+     * @return JsonResponse|Response
+     * @throws \Exception
      */
     public function destroy(PollQuestion $pollQuestions)
     {

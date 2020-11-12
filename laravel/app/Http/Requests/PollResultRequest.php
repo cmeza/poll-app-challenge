@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Route;
 
-class PollUpdateRequest extends BaseFormRequest
+class PollResultRequest extends BaseFormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +14,7 @@ class PollUpdateRequest extends BaseFormRequest
      */
     public function authorize()
     {
-        return $this->canUser('update');
+        return $this->isTokenPermitted();
     }
 
     /**
@@ -24,8 +25,9 @@ class PollUpdateRequest extends BaseFormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'string'],
-            'poll_type_id' => ['required', 'integer'],
+            'poll_id' => ['required', 'integer'],
+            'poll_question_id' => ['required', 'integer'],
+            'value' => ['required', 'integer'],
         ];
     }
 }

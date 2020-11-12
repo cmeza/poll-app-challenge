@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PollResultCreateRequest extends BaseFormRequest
+class PollRequest extends BaseFormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class PollResultCreateRequest extends BaseFormRequest
      */
     public function authorize()
     {
-        return $this->canUser('create');
+        return $this->isTokenPermitted();
     }
 
     /**
@@ -24,10 +24,8 @@ class PollResultCreateRequest extends BaseFormRequest
     public function rules()
     {
         return [
-            // TODO add validation for unique constraint
-            'poll_id' => ['required', 'integer'],
-            'poll_question_id' => ['required', 'integer'],
-            'value' => ['required', 'integer'],
+            'title' => ['required', 'string'],
+            'poll_type_id' => ['required', 'integer'],
         ];
     }
 }

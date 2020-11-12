@@ -3,15 +3,19 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\PollResultCreateRequest;
-use App\Http\Requests\PollResultStoreRequest;
+use App\Http\Requests\PollResultRequest;
 use App\Http\Resources\PollResultResource;
 use App\Models\PollQuestion;
 use App\Models\PollResult;
-use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Http\Response;
 
 class PollResultsController extends Controller
 {
+    /**
+     * PollResultsController constructor.
+     */
     public function __construct()
     {
         $this->middleware('auth:api')->except(['index', 'show']);
@@ -20,7 +24,7 @@ class PollResultsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return AnonymousResourceCollection
      */
     public function index()
     {
@@ -33,12 +37,12 @@ class PollResultsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param PollResultRequest $request
+     * @return JsonResponse|Response|object
      */
-    public function store(PollResultCreateRequest $request)
+    public function store(PollResultRequest $request)
     {
-        // validate unique based on index
+        // TODO validate unique based on index
         $validData = $request->validated();
 
         $questionIsInt = PollQuestion::findOrFail((int) $validData['poll_question_id'])->is_int;
@@ -56,7 +60,7 @@ class PollResultsController extends Controller
         $pollResult = PollResult::firstOrCreate($where, $newValues);
 
         if (! $pollResult->wasRecentlyCreated) {
-            $this->update($request, $pollResult);
+           return $this->update($request, $pollResult);
         }
 
         return (new PollResultResource($pollResult))
@@ -67,8 +71,8 @@ class PollResultsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PollResult  $pollResults
-     * @return \Illuminate\Http\Response
+     * @param PollResult $pollResults
+     * @return PollResultResource|Response
      */
     public function show(PollResult $pollResults)
     {
@@ -80,11 +84,11 @@ class PollResultsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PollResult  $pollResults
-     * @return \Illuminate\Http\Response
+     * @param PollResultRequest $request
+     * @param PollResult $pollResults
+     * @return JsonResponse|Response|object
      */
-    public function update(PollResultStoreRequest $request, PollResult $pollResults)
+    public function update(PollResultRequest $request, PollResult $pollResults)
     {
         $validData = $request->validated();
 
@@ -111,8 +115,9 @@ class PollResultsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PollResult  $pollResults
-     * @return \Illuminate\Http\Response
+     * @param PollResult $pollResults
+     * @return JsonResponse|Response
+     * @throws \Exception
      */
     public function destroy(PollResult $pollResults)
     {

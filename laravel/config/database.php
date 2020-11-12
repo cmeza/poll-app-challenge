@@ -46,11 +46,11 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => 'host.docker.internal', //env('DB_HOST', 'host.docker.internal'), // not sure why this doesn't work
+            'host' => env('DB_HOST', 'host.docker.internal'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'pollApp'),
             'username' => env('DB_USERNAME', 'pollApp'),
-            'password' => env('DB_PASSWORD', 's3cr3tp455w0rd'),
+            'password' => env('DB_PASSWORD'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',

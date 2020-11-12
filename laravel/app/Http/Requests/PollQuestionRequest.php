@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PollStoreRequest extends BaseFormRequest
+class PollQuestionRequest extends BaseFormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class PollStoreRequest extends BaseFormRequest
      */
     public function authorize()
     {
-        return $this->canUser('create');
+        return $this->isTokenPermitted();
     }
 
     /**
@@ -24,8 +24,9 @@ class PollStoreRequest extends BaseFormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'string'],
-            'poll_type_id' => ['required', 'integer'],
+            'poll_id' => ['required', 'integer'],
+            'question' => ['required', 'string'],
+            'is_int' => ['required', 'boolean'],
         ];
     }
 }

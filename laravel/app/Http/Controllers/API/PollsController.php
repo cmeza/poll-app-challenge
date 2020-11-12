@@ -3,14 +3,18 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\PollStoreRequest;
-use App\Http\Requests\PollUpdateRequest;
+use App\Http\Requests\PollRequest;
 use App\Http\Resources\PollResource;
 use App\Models\Poll;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 
 class PollsController extends Controller
 {
+    /**
+     * PollsController constructor.
+     */
     public function __construct()
     {
         $this->middleware('auth:api')->except(['index', 'show']);
@@ -19,7 +23,7 @@ class PollsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return AnonymousResourceCollection
      */
     public function index()
     {
@@ -29,10 +33,10 @@ class PollsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return Response
+     * @param PollRequest $request
+     * @return JsonResponse|Response|object
      */
-    public function store(PollStoreRequest $request)
+    public function store(PollRequest $request)
     {
         $validData = $request->validated();
 
@@ -51,8 +55,8 @@ class PollsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Poll  $poll
-     * @return Response
+     * @param Poll $poll
+     * @return PollResource
      */
     public function show(Poll $poll)
     {
@@ -70,11 +74,11 @@ class PollsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param PollStoreRequest $request
-     * @param \App\Models\Poll $poll
-     * @return Response
+     * @param PollRequest $request
+     * @param Poll $poll
+     * @return JsonResponse|Response|object
      */
-    public function update(PollUpdateRequest $request, Poll $poll)
+    public function update(PollRequest $request, Poll $poll)
     {
         $validData = $request->validated();
 
@@ -91,8 +95,9 @@ class PollsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Poll  $poll
-     * @return Response
+     * @param Poll $poll
+     * @return JsonResponse|Response
+     * @throws \Exception
      */
     public function destroy(Poll $poll)
     {

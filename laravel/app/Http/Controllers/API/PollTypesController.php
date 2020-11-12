@@ -3,14 +3,18 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\PollTypeStoreRequest;
-use App\Http\Requests\PollTypeUpdateRequest;
+use App\Http\Requests\PollTypeRequest;
 use App\Http\Resources\PollTypeResource;
 use App\Models\PollType;
-use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Http\Response;
 
 class PollTypesController extends Controller
 {
+    /**
+     * PollTypesController constructor.
+     */
     public function __construct()
     {
         $this->middleware('auth:api')->except(['index', 'show']);
@@ -19,7 +23,7 @@ class PollTypesController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return AnonymousResourceCollection
      */
     public function index()
     {
@@ -29,10 +33,10 @@ class PollTypesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param PollTypeRequest $request
+     * @return JsonResponse|Response|object
      */
-    public function store(PollTypeStoreRequest $request)
+    public function store(PollTypeRequest $request)
     {
         $validData = $request->validated();
 
@@ -48,8 +52,8 @@ class PollTypesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PollType  $pollTypes
-     * @return \Illuminate\Http\Response
+     * @param PollType $pollTypes
+     * @return PollTypeResource
      */
     public function show(PollType $pollTypes)
     {
@@ -59,11 +63,11 @@ class PollTypesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PollType  $pollTypes
-     * @return \Illuminate\Http\Response
+     * @param PollTypeRequest $request
+     * @param PollType $pollTypes
+     * @return JsonResponse|Response|object
      */
-    public function update(PollTypeUpdateRequest $request, PollType $pollTypes)
+    public function update(PollTypeRequest $request, PollType $pollTypes)
     {
         $validData = $request->validated();
 
@@ -79,8 +83,9 @@ class PollTypesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PollType  $pollTypes
-     * @return \Illuminate\Http\Response
+     * @param PollType $pollTypes
+     * @return JsonResponse|Response
+     * @throws \Exception
      */
     public function destroy(PollType $pollTypes)
     {
