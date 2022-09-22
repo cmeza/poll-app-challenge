@@ -63,579 +63,139 @@ class PollsSeeder extends Seeder
         });
 
         // poll questions
+        $pollQuestions = [];
         $pollIdNBA = Poll::firstWhere('title', 'like', '%NBA%')->id;
         $pollIdNFL = Poll::firstWhere('title', 'like', '%NFL%')->id;
         $pollIdMLB = Poll::firstWhere('title', 'like', '%MLB%')->id;
 
-        $pollQuestionsNBA = [
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => '76ers',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
+        $data = [
+            'MLB' => [
+                'Angels',
+                'Astros',
+                'Athletics',
+                'Blue Jays',
+                'Braves',
+                'Brewers',
+                'Cardinals',
+                'Cubs',
+                'Diamondbacks',
+                'Dodgers',
+                'Giants',
+                'Indians',
+                'Marlins',
+                'Mets',
+                'Nationals',
+                'Orioles',
+                'Padres',
+                'Phillies',
+                'Pirates',
+                'Rangers',
+                'Rays',
+                'Reds',
+                'Red Sox',
+                'Rockies',
+                'Royals',
+                'Tigers',
+                'Twins',
+                'White Sox',
             ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Bucks',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
+            'NFL' => [
+                '49ers',
+                'Bears',
+                'Bengals',
+                'Bills',
+                'Broncos',
+                'Browns',
+                'Buccaneers',
+                'Cardinals',
+                'Colts',
+                'Cowboys',
+                'Chiefs',
+                'Chargers',
+                'Dolphins',
+                'Eagles',
+                'Falcons',
+                'Giants',
+                'Jaguars',
+                'Jets',
+                'Lions',
+                'Packers',
+                'Panthers',
+                'Patriots',
+                'Raiders',
+                'Rams',
+                'Ravens',
+                'Redskins',
+                'Saints',
+                'Seahawks',
+                'Steelers',
+                'Texans',
+                'Titans',
+                'Vikings',
             ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Bulls',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Cavaliers',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Celtics',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Clippers',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Grizzlies',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Hawks',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Heat',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Hornets',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Jazz',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Kings',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Knicks',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Lakers',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Magic',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Mavericks',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Nets',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Nuggets',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Pacers',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Pelicans',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Pistons',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Raptors',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Rockets',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Spurs',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Suns',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Thunder',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Timberwolves',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Trail Blazers',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Warriors',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNBA,
-                'question' => 'Wizards',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
+            'NBA' => [
+                '76ers',
+                'Bucks',
+                'Bulls',
+                'Cavaliers',
+                'Celtics',
+                'Clippers',
+                'Grizzlies',
+                'Hawks',
+                'Heat',
+                'Heat',
+                'Hornets',
+                'Jazz',
+                'Kings',
+                'Knicks',
+                'Lakers',
+                'Magic',
+                'Mavericks',
+                'Nets',
+                'Nuggets',
+                'Pacers',
+                'Pelicans',
+                'Pistons',
+                'Raptors',
+                'Rockets',
+                'Spurs',
+                'Suns',
+                'Thunder',
+                'Timberwolves',
+                'Trail Blazers',
+                'Warriors',
+                'Wizards',
             ],
         ];
+        
+        foreach ($data as $league => $teams) {
+            switch ($league) {
+                case 'MLB': 
+                    $pollId = $pollIdMLB;
+                    break;
+                
+                case 'NFL': 
+                    $pollId = $pollIdNFL;
+                    break;
+                
+                case 'NBA': 
+                    $pollId = $pollIdNBA;
+                    break;
+                
+            }
+            
+            foreach ($teams as $team) {
+                $pollQuestions[] = [
+                    'poll_id' => $pollId,
+                    'question' => $team,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'in_int' => true,
+                ];
+            }
+        }
 
-        $pollQuestionsNFL = [
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Cardinals',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Falcons',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Ravens',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Bills',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Panthers',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Bears',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Bengals',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Browns',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Cowboys',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Broncos',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Lions',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Packers',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Texans',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Colts',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Jaguars',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Chiefs',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Chargers',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Rams',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Dolphins',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Vikings',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Patriots',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Saints',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Giants',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Jets',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Raiders',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Eagles',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Steelers',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => '49ers',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Seahawks',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Buccaneers',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Titans',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdNFL,
-                'question' => 'Redskins',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-        ];
-
-        $pollQuestionsMLB = [
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Diamondbacks',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Braves',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Orioles',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Red Sox',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'White Sox',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Cubs',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Reds',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Indians',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Rockies',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Tigers',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Astros',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Royals',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Angels',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Dodgers',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Marlins',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Brewers',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Twins',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Yankees',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Mets',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Athletics',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Phillies',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Pirates',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Padres',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Giants',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Mariners',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Cardinals',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Rays',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Rangers',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Blue Jays',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-            [
-                'poll_id' => $pollIdMLB,
-                'question' => 'Nationals',
-                'created_at' => date('Y-m-d H:i:s'),
-                'is_int' => true
-            ],
-        ];
-
-        $pollQuestionsValues = array_merge(
-            $pollQuestionsNBA,
-            $pollQuestionsNFL,
-            $pollQuestionsMLB
-        );
-
-        DB::transaction(function () use ($pollQuestionsValues) {
-            DB::table('poll_questions')->insert($pollQuestionsValues);
+        DB::transaction(function () use ($pollQuestions) {
+            DB::table('poll_questions')->insert($pollQuestions);
         });
 
         $questionHoustonNBA = PollQuestion::firstWhere('question', '=','Rockets')->id;
@@ -658,7 +218,7 @@ class PollsSeeder extends Seeder
             [
                 'poll_id' => $pollIdMLB,
                 'poll_question_id' => $questionHoustonMLB,
-                'value' => 73,
+                'value' => rand(1,99),
                 'created_at' => date('Y-m-d H:i:s'),
             ],
         ];
